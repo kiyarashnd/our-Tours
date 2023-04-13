@@ -1,5 +1,5 @@
-// import React, { useState } from 'react';
 import Tour from './Tour';
+
 const Tours = (props) => {
   const tours = props.tours;
 

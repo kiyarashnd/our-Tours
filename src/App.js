@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [tours, setTours] = useState([]);
 
-  const [newTours2, setNewTours2] = useState([]);
+  const [cartTours, setCartTorus] = useState([]);
 
   //this function run in initial ender
   useEffect(() => {
@@ -22,13 +22,17 @@ function App() {
     setTours(newTours);
   }
 
+  //newTour is tour that user clicked on :
   const addTours = (newTour) => {
-    //newTours2 here is previous tour that added
-    const res = newTours2.find((item) =>
+    //cartTours here is previous tour that added
+    //res is first item that it's id is equal to newTour.id
+    const res = cartTours.find((item) =>
       item.id === newTour.id
     )
+    //fot this that user can't add 2 same tour :
+    //age toye liste ghablimoon yani cartTours nist hala bia push kn age hast k dg ezafe nakon
     if (res === undefined) {
-      setNewTours2([...newTours2, newTour]);
+      setCartTorus([...cartTours, newTour]);
     }
   }
 
@@ -71,14 +75,14 @@ function App() {
         <Route exact path="/">
           <main>
             <Tours tours={tours} removeTours={removeTours} addTours={addTours} />
-            <Link to="/Cart" className='myLink'>You have {newTours2.length} tours in Cart
+            <Link to="/Cart" className='myLink'>You have {cartTours.length} tours in Cart
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none" /><path d="M184,184H69.8L41.9,30.6A8,8,0,0,0,34.1,24H16" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" /><circle cx="80" cy="204" r="20" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" /><circle cx="184" cy="204" r="20" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" /><path d="M62.5,144H188.1a15.9,15.9,0,0,0,15.7-13.1L216,64H48" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8" /></svg>
             </Link>
           </main>
         </Route>
 
         <Route path="/Cart">
-          <Cart newTours2={newTours2}></Cart>
+          <Cart cartTours={cartTours}></Cart>
         </Route>
       </Switch>
     </Router>

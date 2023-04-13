@@ -1,9 +1,3 @@
-/*
-=============== 
-Variables
-===============
-*/
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
@@ -45,12 +39,6 @@ Variables
   --fixed-width: 620px;
 }
 
-/*
-=============== 
-Global Styles
-===============
-*/
-
 *,
 ::after,
 ::before {
@@ -85,6 +73,8 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
+
+
 
 h1 {
   font-size: 3rem;
@@ -136,9 +126,6 @@ p {
   }
 }
 
-/*  global classes */
-
-/* section */
 .section {
   width: 90vw;
   margin: 0 auto;
@@ -165,11 +152,6 @@ p {
   font-size: 1.2rem;
 }
 
-/*
-=============== 
-Tours
-===============
-*/
 main {
   width: 90vw;
   max-width: var(--fixed-width);
@@ -182,7 +164,8 @@ main {
 
 .title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
 }
 
 .underline {
@@ -333,4 +316,15 @@ main {
 
 span {
   color: var(--clr-primary-5);
+}
+
+
+.underline2 {
+  width: 75%;
+  height: 0.25rem;
+  background: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 10px;
 }
