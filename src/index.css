@@ -343,6 +343,7 @@ span {
 
 .ToursInCart {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -350,4 +351,31 @@ span {
   text-align: center;
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.single-tour-Cart {
+  display: flex;
+}
+
+.single-tour-Cart img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.tour-info-Cart {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.remove-Cart {
+  color: var(--primary-500);
+  cursor: pointer;
+  font-size: .85rem;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
