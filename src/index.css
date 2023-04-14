@@ -281,12 +281,13 @@ main {
   display: flex;
 }
 
-.myLink svg {
-  width: 30px;
-  height: 30px;
+.myLink:hover {
+  transform: scale(1.1);
+}
 
-  margin-left: 5px;
-  transform: translateY(-2px);
+.mySvg {
+  color: white;
+  font-size: 3rem;
 }
 
 .backHome {
@@ -330,12 +331,12 @@ span {
 }
 
 .numberOfTour {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: black;
   border-radius: 40%;
   background-color: red;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 
   text-align: center;
   transform: translateX(-5px);
