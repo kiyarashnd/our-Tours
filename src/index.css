@@ -293,7 +293,7 @@ main {
   text-align: center;
   display: block;
   width: 200px;
-  margin: 1rem auto 0 auto;
+  margin: 1rem auto 1rem auto;
   color: var(--clr-primary-3);
   letter-spacing: var(--spacing);
   background: transparent;
@@ -339,4 +339,15 @@ span {
 
   text-align: center;
   transform: translateX(-5px);
+}
+
+.ToursInCart {
+  display: flex;
+  gap: 10px;
+}
+
+.titleNew {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
 }
