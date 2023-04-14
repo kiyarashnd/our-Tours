@@ -328,3 +328,15 @@ span {
 
   margin-top: 10px;
 }
+
+.numberOfTour {
+  font-size: 0.7rem;
+  color: black;
+  border-radius: 40%;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+
+  text-align: center;
+  transform: translateX(-5px);
+}
