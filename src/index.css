@@ -273,8 +273,8 @@ main {
 .myLink {
   position: fixed;
   top: 0;
-  color: var(--clr-grey-1);
-  background-color: var(--clr-primary-5);
+  /* color: var(--clr-grey-1);
+  background-color: var(--clr-primary-5); */
   left: 0;
 
   padding: 10px;
@@ -286,8 +286,24 @@ main {
 }
 
 .mySvg {
-  color: white;
+  color: var(--clr-primary-5);
   font-size: 3rem;
+}
+
+.myLink2 {
+  position: fixed;
+  top: 0;
+  /* color: var(--clr-grey-1);
+  background-color: var(--clr-primary-5); */
+  left: 0;
+
+  padding: 10px;
+  display: flex;
+}
+
+.myLink2 .mySvg {
+  color: var(--clr-primary-5);
+  font-size: 2.5rem;
 }
 
 .backHome {
@@ -350,7 +366,7 @@ span {
 
 .titleNew {
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
@@ -378,5 +394,10 @@ span {
   font-size: .85rem;
   background: transparent;
   border: none;
-  text-align: left;
+
+  width: 80px;
+}
+
+.remove-Cart:hover {
+  transform: scale(1.1);
 }

@@ -84,7 +84,7 @@ function App() {
         </Route>
 
         <Route path="/Cart">
-          <Cart cartTours={cartTours} removeTours={removeTours} addTours={addTours}></Cart>
+          <Cart cartTours={cartTours}></Cart>
         </Route>
       </Switch>
     </Router>
