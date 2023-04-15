@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa"
-import { useEffect, useState } from 'react';
 
-const Cart = ({ cartTours }) => {
-    const [tours, setTours] = useState(cartTours);
-    let [sum, setsum] = useState(0);
+const Cart = ({ cartTours, setCartTorus }) => {
+    let sum = 0;
 
     let undereline = false;
     let total = 0;
@@ -14,26 +12,24 @@ const Cart = ({ cartTours }) => {
         undereline = true;
 
 
-    function removeCartTours(event) {
-        const id = event.target.parentNode.parentNode.parentNode.id;
-        const newTours = tours.filter((tour) => tour.id !== id);
-        setTours(newTours);
+    function removeCartTours(id) {
+        // const id = event.target.parentNode.parentNode.parentNode.id;
+        const newTours = cartTours.filter((tour) => tour.id !== id);
+        setCartTorus(newTours);
     }
 
-    useEffect(() => {
-        tours.map((tour) => {
-            let price = Number(tour.price.replaceAll(',', ""))
-            total += price;
-        })
-        setsum(total);
-    }, [tours]);
+    cartTours.map((tour) => {
+        let price = Number(tour.price.replaceAll(',', ""))
+        total += price;
+    })
+    sum = total;
 
     return (
         <section className='items'>
 
             <div className='myLink2'>
                 <FaShoppingCart className='mySvg' />
-                <span className='numberOfTour'>{tours.length}</span>
+                <span className='numberOfTour'>{cartTours.length}</span>
             </div>
 
             <div className="titleNew">
@@ -42,21 +38,19 @@ const Cart = ({ cartTours }) => {
             </div>
 
             <div className='ToursInCart'>
-                {tours.map((tour) => {
-                    // return <Tour key={tour.id} tour={tour} removeTours={removeTours} addTours={addTours} />
-                    return (
-                        <article className='single-tour-Cart' key={tour.id} id={tour.id}>
-                            <img src={tour.image} alt={tour.name} />
-                            <footer>
-                                <div className="tour-info-Cart">
-                                    <h4>{tour.name}</h4>
-                                    <h4 className='tour-price'>${tour.price}</h4>
-                                    <button className='remove-Cart' onClick={removeCartTours}>remove tour</button>
-                                </div>
-                            </footer>
-                        </article>
-                    )
-                })}
+                {cartTours.map((tour) => (
+                    <article className='single-tour-Cart' key={tour.id} id={tour.id}>
+                        <img src={tour.image} alt={tour.name} />
+                        <footer>
+                            <div className="tour-info-Cart">
+                                <h4>{tour.name}</h4>
+                                <h4 className='tour-price'>${tour.price}</h4>
+                                <button className='remove-Cart' onClick={() => removeCartTours(tour.id)}>remove tour</button>
+                            </div>
+                        </footer>
+                    </article>
+                )
+                )}
             </div>
 
             {undereline ? <div className="underline2"></div> : null}

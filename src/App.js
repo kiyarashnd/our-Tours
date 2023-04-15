@@ -72,6 +72,9 @@ function App() {
   }
   return (
     <Router>
+      {/* <header>
+        <h1>This is test header</h1>
+      </header> */}
       <Switch>
         <Route exact path="/">
           <main>
@@ -84,7 +87,7 @@ function App() {
         </Route>
 
         <Route path="/Cart">
-          <Cart cartTours={cartTours}></Cart>
+          <Cart cartTours={cartTours} setCartTorus={setCartTorus}></Cart>
         </Route>
       </Switch>
     </Router>
