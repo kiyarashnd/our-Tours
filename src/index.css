@@ -287,41 +287,23 @@ main {
 
 .mySvg {
   color: var(--clr-primary-5);
-  font-size: 3rem;
-}
-
-.myLink2 {
-  position: fixed;
-  top: 0;
-  /* color: var(--clr-grey-1);
-  background-color: var(--clr-primary-5); */
-  left: 0;
-
-  padding: 10px;
-  display: flex;
-}
-
-.myLink2 .mySvg {
-  color: var(--clr-primary-5);
   font-size: 2.5rem;
 }
 
+nav {
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
 .backHome {
-  text-align: center;
-  display: block;
-  width: 200px;
-  margin: 1rem auto 1rem auto;
+  font-size: 2.5rem;
   color: var(--clr-primary-3);
-  letter-spacing: var(--spacing);
-  background: transparent;
-  border: 1px solid var(--clr-primary-3);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
+  margin-left: 80px;
+  margin-top: 5px;
+  position: fixed;
 }
 
 .backHome:hover {
-  color: white;
-  background-color: var(--clr-primary-3);
   transform: scale(1.1);
 }
 
@@ -372,6 +354,7 @@ span {
 
 .single-tour-Cart {
   display: flex;
+  margin-left: 10px;
 }
 
 .single-tour-Cart img {

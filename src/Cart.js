@@ -27,10 +27,10 @@ const Cart = ({ cartTours, setCartTorus }) => {
     return (
         <section className='items'>
 
-            <div className='myLink2'>
+            {/* <Link to="/Cart" className='myLink'>
                 <FaShoppingCart className='mySvg' />
                 <span className='numberOfTour'>{cartTours.length}</span>
-            </div>
+            </Link> */}
 
             <div className="titleNew">
                 <h2>YOUR BAG</h2>
@@ -58,8 +58,6 @@ const Cart = ({ cartTours, setCartTorus }) => {
             {/* for change format to dollar format with , */}
             <p className='totalPrice'>total price is {Intl.NumberFormat().format(sum)} $</p>
             <p className='totalPrice'>قیمت نهایی : {new Intl.NumberFormat("ar-EG").format(sum * 50000)} تومان</p>
-
-            <Link to="/" className="backHome">Back to home</Link>
         </section>
     );
 }

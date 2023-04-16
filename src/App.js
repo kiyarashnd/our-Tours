@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Loading from './Loading'
 import Tours from './Tours'
 import Cart from './Cart'
-import { FaShoppingCart } from "react-icons/fa"
+import { FaShoppingCart, FaHome } from "react-icons/fa"
 
 const url = 'https://course-api.com/react-tours-project';
 function App() {
@@ -72,17 +72,20 @@ function App() {
   }
   return (
     <Router>
-      {/* <header>
-        <h1>This is test header</h1>
-      </header> */}
+      <nav>
+        <Link to="/Cart" className='myLink' title='shopping-cart'>
+          <FaShoppingCart className='mySvg' />
+          <span className='numberOfTour'>{cartTours.length}</span>
+        </Link>
+
+        <Link to="/" className="backHome" title='back home'>
+          <FaHome />
+        </Link>
+      </nav>
       <Switch>
         <Route exact path="/">
           <main>
             <Tours tours={tours} removeTours={removeTours} addTours={addTours} />
-            <Link to="/Cart" className='myLink'>
-              <FaShoppingCart className='mySvg' />
-              <span className='numberOfTour'>{cartTours.length}</span>
-            </Link>
           </main>
         </Route>
 
