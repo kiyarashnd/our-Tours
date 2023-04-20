@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa"
 
 const Cart = ({ cartTours, setCartTorus }) => {
-    let sum = 0;
-
     let undereline = false;
-    let total = 0;
     // const persian = Intl.NumberFormat("fa")
     // console.log(persian.format(2312));
     if (cartTours.length > 0)
@@ -13,24 +10,18 @@ const Cart = ({ cartTours, setCartTorus }) => {
 
 
     function removeCartTours(id) {
-        // const id = event.target.parentNode.parentNode.parentNode.id;
         const newTours = cartTours.filter((tour) => tour.id !== id);
         setCartTorus(newTours);
     }
 
-    cartTours.map((tour) => {
+    let sum = cartTours.reduce((total, tour) => {
         let price = Number(tour.price.replaceAll(',', ""))
         total += price;
-    })
-    sum = total;
+        return total;
+    }, 0)
 
     return (
         <section className='items'>
-
-            {/* <Link to="/Cart" className='myLink'>
-                <FaShoppingCart className='mySvg' />
-                <span className='numberOfTour'>{cartTours.length}</span>
-            </Link> */}
 
             <div className="titleNew">
                 <h2>YOUR BAG</h2>
